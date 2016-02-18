@@ -4,7 +4,7 @@ fingerer.index(function(output) {
     output.write("I'm on the index!");
 });
 
-fingerer.path(/^([a-z \.]+)$/gi, function(output, matches) {
+fingerer.use(/^([a-z \.]+)$/gi, function(output, matches) {
     output.write("I'm on path " + matches[0] + "!");
 });
 
