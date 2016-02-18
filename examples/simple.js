@@ -1,11 +1,10 @@
-var fingerer = require('./lib')();
+var fingerer = require('../lib')();
 
 fingerer.index(function(output) {
     output.write("I'm on the index!");
 });
 
 fingerer.path(/^([a-z \.]+)$/gi, function(output, matches) {
-    console.log(arguments);
     output.write("I'm on path " + matches[0] + "!");
 });
 
