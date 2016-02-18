@@ -1,12 +1,14 @@
 var test = require('tape');
 var QueryRouter = require('../lib/QueryRouter');
 
+var indexRegexp = /^$/gi;
+
 test('adding simple index middleware', function(t) {
     var qr = new QueryRouter();
     var query = "";
     t.plan(2);
 
-    qr.use(function(req) {
+    qr.use(indexRegexp, function(req) {
         t.ok(req,
             "Should call the index router");
         t.equal(query, req.query,
@@ -26,7 +28,7 @@ test('adding a simple handler', function(t) {
     var query = "dude";
     t.plan(2);
 
-    qr.use(function() {
+    qr.use(indexRegexp, function() {
         t.fail("Should not call the index route");
     });
 
@@ -81,5 +83,4 @@ test('not using next in a handler', function(t) {
     })
 
     qr.process(query);
-
 });

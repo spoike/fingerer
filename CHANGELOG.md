@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+* Implemented middleware.
+
 ## 0.2.0
 
 * Using `use` like the more familiar Express/Sinatra API to route queries.
