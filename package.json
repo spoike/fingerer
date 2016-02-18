@@ -4,6 +4,7 @@
   "description": "The Super Simple Finger Protocol (RFC 1288) App Framework",
   "main": "lib/index.js",
   "scripts": {
+    "test": "tape test/*.spec.js | tap-nyan"
   },
   "keywords": [
     "finger",
@@ -18,6 +19,11 @@
   "author": "Mikael Brassman <mishakun@gmail.com> (https://twitter.com/spoike)",
   "license": "MIT",
   "dependencies": {
-    "debug": "^2.2.0"
+    "debug": "^2.2.0",
+    "lodash": "^4.5.0"
+  },
+  "devDependencies": {
+    "tap-nyan": "0.0.2",
+    "tape": "^4.4.0"
   }
 }
